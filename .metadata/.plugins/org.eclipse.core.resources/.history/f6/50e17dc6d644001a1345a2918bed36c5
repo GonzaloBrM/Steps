@@ -1,5 +1,0 @@
-package com.gbm.dev.steps.util;
-
-public class LevenshteinComparable {
-
-}

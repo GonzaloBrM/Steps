@@ -1,0 +1,32 @@
+package com.gbm.dev.steps.util;
+
+import java.util.Comparator;
+
+import com.gbm.dev.steps.model.Guide;
+import com.gbm.dev.steps.model.User;
+
+public class LevenshteinComparator implements Comparator<Guide>{
+    private static String compareBy = "";
+
+    public LevenshteinComparator(String compareBy) {
+        LevenshteinComparator.compareBy = compareBy;
+    }
+
+
+
+    public int compare(Guide a, Guide b) {
+        return compareByLevenshtein(a, b, compareBy);
+    }
+    
+	private static int compareByLevenshtein(Guide g1, Guide g2, String name) {
+		Integer g1Dist = Levenshtein.calculate(g1.getName(), name);
+		Integer g2Dist = Levenshtein.calculate(g2.getName(), name);
+		return g1Dist.compareTo(g2Dist);
+	}
+	
+	private static int compareByLevenshtein(User g1, User g2, String name) {
+		Integer g1Dist = Levenshtein.calculate(g1.getUserName(), name);
+		Integer g2Dist = Levenshtein.calculate(g2.getUserName(), name);
+		return g1Dist.compareTo(g2Dist);
+	}
+}

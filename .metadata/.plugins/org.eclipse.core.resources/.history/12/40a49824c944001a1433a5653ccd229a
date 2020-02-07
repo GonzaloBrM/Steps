@@ -1,0 +1,5 @@
+package com.gbm.dev.steps.model;
+
+public class User {
+
+}

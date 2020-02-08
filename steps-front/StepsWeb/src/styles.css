@@ -1,0 +1,36 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+@font-face {
+    font-family: "Lato-Hairline";
+    src: url("assets/fonts/Lato-Hairline.ttf");
+}
+
+.mat-card{
+    border-radius: 0px;
+    width: 100%;
+    text-align: center;
+    font-family: "Lato-Hairline" !important;
+    font-weight: 1000 !important;
+    height: 100%;
+   }
+
+.mat-card-title {
+    font-family: "Lato-Hairline";
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.mat-grid-tile .mat-figure {
+    text-align: left;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: inline-block !important;
+    top: 0.5em !important;
+ }
+
+ .mat-icon{
+     vertical-align: middle;
+}
+

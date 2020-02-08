@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title  class = "mat-elevation-z5 main-title">MY GUIDES</mat-card-title>
+    <mat-card-content layout-padding>
+      <mat-grid-list class = "mat-elevation-z3" style = "padding:1em" *ngFor="let guide of guides" cols="5" rowHeight="2.5em" >
+    
+        <mat-grid-tile class = "title"  [colspan] = 3 (click)="goToGuide(guide)">
+          {{guide.name.toUpperCase()}} 
+        </mat-grid-tile>
+        
+        <mat-grid-tile>
+          <mat-icon color="primary">face</mat-icon> &nbsp; 594342 
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-icon color="primary"> play_arrow</mat-icon> &nbsp; {{guide.numSteps}}
+        </mat-grid-tile>
+      
+      </mat-grid-list>
+  </mat-card-content>
+</mat-card>

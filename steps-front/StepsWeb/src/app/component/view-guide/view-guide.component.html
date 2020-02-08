@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title  class = "mat-elevation-z5">{{guide.name.toUpperCase()}} </mat-card-title>
+               
+        <mat-card-content class = "mat-elevation-z5">
+            <div>{{getText()}}</div>   
+            
+            <img mat-car-image src="{{getImg()}}" class = "mat-elevation-z5" alt="logo">
+        </mat-card-content>
+    
+        <button mat-icon-button *ngFor="let step of guide.steps; index as i" (click) = "goToStep(i)">
+            <mat-icon *ngIf="step != current_step;else selected" color="primary" 
+            >radio_button_unchecked</mat-icon>
+        </button>
+
+        <ng-template #selected>
+            <mat-icon color="primary">radio_button_checked</mat-icon>
+          </ng-template>
+
+  </mat-card>

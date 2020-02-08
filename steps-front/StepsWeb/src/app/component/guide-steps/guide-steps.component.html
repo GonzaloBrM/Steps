@@ -1,0 +1,29 @@
+<mat-card>
+    <form [formGroup]="stepForm" autocomplete="off" novalidate (ngSubmit)="onSubmit(stepForm.value)">       
+        <mat-card-content class = "form-container mat-elevation-z10">
+
+            <mat-form-field>
+                <textarea class = "mat-elevation-z5" matInput formControlName="text" rows=10></textarea>
+            </mat-form-field>
+        
+            <img mat-car-image src="{{getCurrentImg()}}" class = "mat-elevation-z5" alt="logo">
+           
+        </mat-card-content>
+    </form>
+    
+    <button mat-icon-button *ngFor="let step of guide.steps; index as i" (click) = "goToStep(i)">
+        <mat-icon *ngIf="step != current_step;else selected" color="primary" 
+        >radio_button_unchecked</mat-icon>
+    </button>
+
+
+    <button mat-icon-button>
+        <mat-icon color="primary" >add</mat-icon>
+    </button>
+
+
+    <ng-template #selected>
+        <mat-icon color="primary">radio_button_checked</mat-icon>
+      </ng-template>
+    
+  </mat-card>

@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title  class = "mat-elevation-z5">LOGIN</mat-card-title>
+        <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="onSubmit(loginForm.value)">       
+            <mat-card-content class = "form-container mat-elevation-z5">
+
+                <mat-form-field>
+                    <input matInput placeholder="User Name" formControlName="name">
+                </mat-form-field>
+            
+                <mat-form-field>
+                    <textarea matInput placeholder="Password" formControlName="password"></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" mat-icon-button>SUBMIT</button>
+                
+            </mat-card-content>
+        </form>
+
+  </mat-card>
